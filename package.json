@@ -1,0 +1,23 @@
+{
+  "name": "auto-giwifi",
+  "version": "1.0.0",
+  "description": "javascript can auto-login giwifi for HPU",
+  "main": "index.js",
+  "scripts": {
+    "": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "GiWifi",
+    "AutoLogin"
+  ],
+  "author": "Giraffele",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "crypto-js": "^4.2.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
+  }
+}
