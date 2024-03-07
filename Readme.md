@@ -2,6 +2,8 @@
 
 这是一个能够自动登录河南理工大学的校园网GiWifi的脚本
 
+具体分析内容见 [博客文章](https://giraffele.site/post/%E6%B2%B3%E5%8D%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6GiWifi%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B%E5%88%86%E6%9E%90%E5%8F%8A%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95/)
+
 ## 实现流程
 1. `Cheerio`获取登陆页面的表单项的值
 2. 然后使用`Crypto-js`进行本地加密处理.
