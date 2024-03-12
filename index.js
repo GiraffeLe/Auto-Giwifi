@@ -6,8 +6,12 @@ const userInfo = {
     password : args[1],
     userMac : " "
 }
-
-var BaseURL = "http://192.168.99.120"
+if (args.length > 2 && args[2]) {
+    var BaseURL = "http://" + args[2]
+  } else {
+    // 未设置认证吴福气地址时，默认地址
+    var BaseURL = "http://10.53.1.3"
+  }
 var url = BaseURL+"/gportal/web/login"
 var headers = {
     //注释掉这个会提示"userName is empty"
