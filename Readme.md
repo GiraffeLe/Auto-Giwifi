@@ -47,10 +47,11 @@ git clone https://github.com/GiraffeLe/Auto-Giwifi
 npm install
 ```
 
-#打包/dist/index.js
+输出dist/index.js
+
 全局安装ncc
 ```
-git clone https://github.com/GiraffeLe/Auto-Giwifi
+npm install -g ncc
 ```
 打包成dist
 ```
