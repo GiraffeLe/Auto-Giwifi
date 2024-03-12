@@ -9,7 +9,7 @@ const userInfo = {
 if (args.length > 2 && args[2]) {
     var BaseURL = "http://" + args[2]
   } else {
-    // 未设置认证吴福气地址时，默认地址
+    // 未设置认证服务器ip地址时，默认地址
     var BaseURL = "http://10.53.1.3"
   }
 var url = BaseURL+"/gportal/web/login"
