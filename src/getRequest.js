@@ -4,7 +4,8 @@ const cryptoEncode = require('./cryptoEncode')
 const postData = require('./postRequest')
 
 
-function getRequest(url, headers, userInfo,BaseURL) {
+function getRequest(baseUrl, headers, userInfo) {
+    let url = baseUrl+"/gportal/web/login"
     axios.get(url, {
         headers: headers
     })
@@ -16,15 +17,19 @@ function getRequest(url, headers, userInfo,BaseURL) {
             let getStr = $("#frmLogin").serialize();
             let strArr = getStr.split("&");
 
-            strArr[3] = strArr[3] + userInfo.userMac;
+            //strArr[3] = strArr[3] + userInfo.userMac;
             strArr[10] = strArr[10] + userInfo.username;
             strArr[11] = strArr[11] + userInfo.password;
 
             let oriData = strArr.join("&");
             let msg = cryptoEncode(oriData, iv);
-
+            let dataObj = {
+                "ivv": iv,
+                "msg": msg,
+                "sign": sign
+            }
             setTimeout(function () {
-                postData(msg,iv,headers,sign,BaseURL)
+                postData(baseUrl,headers,dataObj)
             },3000)
         }).catch(Error => {
         console.log("获取网页内容时错误:", Error)
