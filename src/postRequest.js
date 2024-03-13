@@ -1,7 +1,8 @@
 const axios = require("axios")
 
-function postData(msg, ivv, headers, sign) {
-    let url = "http://10.53.1.3/gportal/web/authLogin?round=" + Math.round(Math.random() * 1000);
+function postData(msg, ivv, headers, sign,BaseURL) {
+    console.log(BaseURL)
+    let url = BaseURL+"/gportal/web/authLogin?round=" + Math.round(Math.random() * 1000);
     axios.post(url,
         {
             data: msg,
@@ -10,12 +11,12 @@ function postData(msg, ivv, headers, sign) {
         {headers: headers})
         .then(Response => {
             console.log(Response.data);
-            queryAuthState(headers, sign);
+            queryAuthState(headers, sign,BaseURL);
         })
 }
 
-function queryAuthState(headers, sign) {
-    let url = "http://10.53.1.3/gportal/web/queryAuthState";
+function queryAuthState(headers, sign,BaseURL) {
+    let url = BaseURL+"/gportal/web/queryAuthState";
     axios.post(url, {
         "sign": sign,
     }, {

@@ -6,12 +6,17 @@ const userInfo = {
     password : args[1],
     userMac : " "
 }
-
-var url = "http://10.53.1.3/gportal/web/login"
+if (args.length > 2 && args[2]) {
+    var BaseURL = "http://" + args[2]
+  } else {
+    // 未设置认证服务器ip地址时，默认地址
+    var BaseURL = "http://10.53.1.3"
+  }
+var url = BaseURL+"/gportal/web/login"
 var headers = {
     //注释掉这个会提示"userName is empty"
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
     "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.5.1.4 Safari/537.36"
 }
 
-getRequest(url,headers,userInfo);
+getRequest(url,headers,userInfo,BaseURL);

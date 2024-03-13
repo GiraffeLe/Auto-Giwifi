@@ -4,7 +4,7 @@ const cryptoEncode = require('./cryptoEncode')
 const postData = require('./postRequest')
 
 
-function getRequest(url, headers, userInfo) {
+function getRequest(url, headers, userInfo,BaseURL) {
     axios.get(url, {
         headers: headers
     })
@@ -24,7 +24,7 @@ function getRequest(url, headers, userInfo) {
             let msg = cryptoEncode(oriData, iv);
 
             setTimeout(function () {
-                postData(msg,iv,headers,sign)
+                postData(msg,iv,headers,sign,BaseURL)
             },3000)
         }).catch(Error => {
         console.log("获取网页内容时错误:", Error)

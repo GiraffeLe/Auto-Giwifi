@@ -18,10 +18,12 @@
 在`index.js`所在文件夹中
 
 ```
-node index.js 你的账号 你的密码
+node index.js 你的账号 你的密码 认证服务器ip(可选)
 ```
+认证服务器ip默认为10.53.1.3
 ```
-node index.js 123456789 123456789
+node index.js 123456789 123456789 
+node index.js 123456789 123456789 10.53.1.3
 ```
 如果输入的账号密码正确,控制台会输出"认证成功,稍后跳转"
 
@@ -45,8 +47,13 @@ git clone https://github.com/GiraffeLe/Auto-Giwifi
 npm install
 ```
 
+输出dist/index.js
 
-
-
-
-
+全局安装ncc
+```
+npm install -g ncc
+```
+打包成dist
+```
+ncc build index.js
+```
